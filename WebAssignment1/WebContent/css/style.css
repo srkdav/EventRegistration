@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+body{
+	font-family:Geneva, sans-serif;
+	font-size:20px;
+}
+
+.error{
+	color:#FF0000;
+}
+
+.success{
+	color:#0000FF;
+}
