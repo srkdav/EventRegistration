@@ -1,5 +1,8 @@
 package com.app.controller;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -39,7 +42,7 @@ public class UserController {
 
 	@GetMapping("/login")
 	public String loginForm(HttpSession req) {
-		req.invalidate();
+//		req.invalidate();
 		return "/user/login";
 	}
 
@@ -68,17 +71,34 @@ public class UserController {
 
 	@GetMapping("/graph")
 	public String barGraph(Model model) {
-		Map<String, Long> surveyMap = new LinkedHashMap<>();
-		List<Object[]> list = dao.getCustomerGroupedBy();
+		Map<String, Float> surveyMap = new LinkedHashMap<>();
+		Map<LocalDate, Long> dateMap = new HashMap<>();
+		List<Object[]> list = dao.getCustomerGroupedByTickets();
+		List<Object[]> list_date = dao.getCustomerGroupedByDate();
+		
 		Map<String, Long> hm = new HashMap<>();
 		for (int i = 0; i < list.size(); i++) {
 			String str = (String) list.get(i)[0];
 			long val = (long) list.get(i)[1];
 			hm.put(str, val);
 		}
-		surveyMap.put("self", hm.get("self"));
-		surveyMap.put("group", hm.get("group"));
-		surveyMap.put("corp", hm.get("corp"));
+		List<Date> list_date_view = new ArrayList<>();
+		List<Integer> list_count_view = new ArrayList<>();
+
+		System.out.println(list_date);
+		for (int i = 0; i < list_date.size(); i++) {
+			LocalDate date = (LocalDate) list_date.get(i)[0];
+			long val = (long) list.get(i)[1];
+			dateMap.put(date, val);
+		}
+		System.out.println("map"+ dateMap);
+		float x = hm.get("self")*100/3;
+		surveyMap.put("self", x);
+		x=hm.get("group")*100/3;
+		surveyMap.put("group", x);
+		x=hm.get("corp")*100/3;
+		surveyMap.put("corp", x);
+		model.addAttribute("dateMap", dateMap);
 		model.addAttribute("surveyMap", surveyMap);
 		return "/user/graph";
 	}

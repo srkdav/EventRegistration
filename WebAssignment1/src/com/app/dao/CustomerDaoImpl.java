@@ -24,6 +24,7 @@ public class CustomerDaoImpl implements ICustomerDao  {
 
 		LocalDate date = java.time.LocalDate.now();
 		c.setgeneratedDate(date);
+		System.out.println(date);
 		sf.getCurrentSession().persist(c);
 		return "customer with ID regd successfully";
 	}
@@ -37,7 +38,7 @@ public class CustomerDaoImpl implements ICustomerDao  {
 	}
 
 	
-	public List<Object[]> getCustomerGroupedBy(){
+	public List<Object[]> getCustomerGroupedByTickets(){
 		String sql = "select c.type,count(c.id) from Customer c group by c.type";
 		List<?> list = sf.getCurrentSession().createQuery(sql).getResultList();
 		List<Object[]> list1 = new ArrayList<>();
@@ -47,6 +48,20 @@ public class CustomerDaoImpl implements ICustomerDao  {
 			System.out.println(row[0]+", "+ row[1]);
 		}
 		return list1;
+	}
+
+	@Override
+	public List<Object[]> getCustomerGroupedByDate() {
+		String sql = "select c.generatedDate,count(c.id) from Customer c group by c.generatedDate";
+		List<?> list = sf.getCurrentSession().createQuery(sql).getResultList();
+		List<Object[]> final_list = new ArrayList<>();
+		for(int i=0; i<list.size(); i++) {
+			Object[] row = (Object[]) list.get(i);
+			final_list.add(row);
+			System.out.println(row[0]+", "+ row[1]);
+		}
+
+		return final_list;
 	}
 
 }

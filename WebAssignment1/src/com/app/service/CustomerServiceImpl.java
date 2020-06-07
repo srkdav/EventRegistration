@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements ICustomerService{
 	}
 
 	@Override
-	public List<Object[]> getCustomerGroupedBy(){
-		 return dao.getCustomerGroupedBy();
+	public List<Object[]> getCustomerGroupedByTickets(){
+		 return dao.getCustomerGroupedByTickets();
 	}
 }

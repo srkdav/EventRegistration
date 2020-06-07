@@ -14,5 +14,5 @@ public interface ICustomerService {
 	
 	public List<Customer> getAllCustomers(int page_id);
 
-	public List<Object[]> getCustomerGroupedBy();
+	public List<Object[]> getCustomerGroupedByTickets();
 }

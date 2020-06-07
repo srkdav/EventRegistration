@@ -66,15 +66,17 @@ th, td {
 	font-size: 15px;
 	color: white;
 }
-.container-fluid{
-float:center;
+
+.container-fluid {
+	float: center;
 }
 </style>
 <body>
-	<div class="wrapper" style="background-image: url('${pageContext.request.contextPath}/img/party.jpg')">
+	<div class="wrapper"
+		style="background-image: url('${pageContext.request.contextPath}/img/party.jpg')">
 		<div class="sidebar" data-color="black"
 			data-image="<spring:url value='/img/sidebar-5.jpg"'/>">
-			<div class="sidebar-wrapper" >
+			<div class="sidebar-wrapper">
 				<div class="logo">
 					<a class="simple-text">${admin_name}'s Profile ! </a>
 				</div>
@@ -101,8 +103,8 @@ float:center;
 						<ul class="nav navbar-nav mr-auto">
 						</ul>
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item"><a class="nav-link"
-								href="../"> <span class="no-icon">Log out</span>
+							<li class="nav-item"><a class="nav-link" href="../"> <span
+									class="no-icon">Log out</span>
 							</a></li>
 						</ul>
 					</div>
@@ -115,17 +117,14 @@ float:center;
 						<div class="col-md-8">
 							<div class="card ">
 								<div class="card-header ">
-									<h4 class="card-title">Ticket Statistics</h4>
+									<h4 class="card-title">Ticket Statistics-1</h4>
 								</div>
 								<div class="card-body ">
-									<!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth">
-									</div>-->
-
 									<div class="container">
-										<h2 align="center">Line Graph</h2>
+										<h2 align="center">Pie chart</h2>
 
 										<div id="container"
-											style="width: 550px; height: 300px; margin: 0 auto; "></div>
+											style="width: 550px; height: 300px; margin: 0 auto;"></div>
 									</div>
 									<script
 										src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -137,24 +136,47 @@ float:center;
 									<script th:inline="javascript">
 		document.addEventListener('DOMContentLoaded', function() {
 			var myChart = Highcharts.chart('container', {
-				chart : {
-					type : 'bar'
-				},
-				title : {
-					text : 'Analysis- tickets'
-				},
-				xAxis : {
-					categories : ["Self", "Group", "Corporate"]
-				},
-				yAxis : {
-					title : {
-						text : 'Type of Tickets'
-					}
-				},
-				series : [ {
-					name : 'Tickets',
-					data :  ${surveyMap.values()}
-				}]
+			    chart: {
+			        plotBackgroundColor: null,
+			        plotBorderWidth: null,
+			        plotShadow: false,
+			        type: 'pie'
+			    },
+			    title: {
+			        text: 'Ticket Pie Chart'
+			    },
+			    tooltip: {
+			        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			    },
+			    accessibility: {
+			        point: {
+			            valueSuffix: '%'
+			        }
+			    },
+			    plotOptions: {
+			        pie: {
+			            allowPointSelect: true,
+			            cursor: 'pointer',
+			            dataLabels: {
+			                enabled: true,
+			                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+			            }
+			        }
+			    },
+			    series: [{
+			        name: 'Brands',
+			        colorByPoint: true,
+			        data: [{
+			            name: 'Self',
+			            y: ${surveyMap.self}
+			        }, {
+			            name: 'Group',
+			            y: ${surveyMap.group}
+			        }, {
+			            name: 'Corp',
+			            y:  ${surveyMap.corp}
+			        }]
+			    }]
 			});
 		});
 	</script>
@@ -164,13 +186,83 @@ float:center;
 									<hr>
 								</div>
 							</div>
-						</div>
+							<div class="card ">
+								<div class="card-header1 ">
+									<h4 class="card-title">Ticket Statistics-2</h4>
+								</div>
+								<div class="card-body1 ">
+									<div class="container2">
+										<h2 align="center">Day wise count</h2>
 
+										<div id="container2"
+											style="width: 550px; height: 300px; margin: 0 auto;"></div>
+									</div>
+									<script
+										src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+									Latest compiled and minified JavaScript
+									<script
+										src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+									<script src="https://code.highcharts.com/highcharts.js"></script>
+									<script src="https://code.highcharts.com/modules/exporting.js"></script>
+									<script th:inline="javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			var myChart = Highcharts.chart('container2', {
+				title: {
+			        text: 'Day Wise ticket analysis'
+			    },
+
+			    yAxis: {
+			        title: {
+			            text: 'Number of Tickets'
+			        }
+			    },
+			    tooltip: {
+			        pointFormat: "Value: {point.y:,.1f}"
+			    },
+			    
+			    xAxis: {
+			        type: 'datetime',
+			        labels: {
+			            format: '{value:%m-%d}',
+			            rotation: 45,
+			            align: 'left'
+			        }
+			    },
+
+			    series: [{
+			        data: ${dateMap.values()},
+			        pointStart: Date.UTC(2020, 6, 4),
+			        pointInterval: 24 * 36e5
+			    }],
+			    responsive: {
+			        rules: [{
+			            condition: {
+			                maxWidth: 500
+			            },
+			            chartOptions: {
+			                legend: {
+			                    layout: 'horizontal',
+			                    align: 'center',
+			                    verticalAlign: 'bottom'
+			                }
+			            }
+			        }]
+			    }
+			    
+			});
+		});
+
+	</script>
+
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </body>
 <!--   Core JS Files   -->
 <script src="<spring:url value='/js/core/jquery.3.2.1.min.js'/>"

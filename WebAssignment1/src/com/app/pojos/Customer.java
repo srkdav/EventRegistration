@@ -1,6 +1,5 @@
 package com.app.pojos;
 
-
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -10,20 +9,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.mysql.cj.jdbc.Blob;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "Customer")
 public class Customer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
+	@GenericGenerator(name = "customer_seq", strategy = "com.app.pojos.StringPrefixedSequenceIdGenerator", parameters = {
+			@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "50"),
+			@Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "B_"),
+			@Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d") })
 
-	private Integer id;
+	private String id;
 	private String fullName;
 	private String mobile;
 	private String email;
 	private String type;
 	private String countTickets;
+	@Column(name = "reg_date")
+
 	private LocalDate generatedDate;
 
 	public Customer() {
@@ -31,7 +37,7 @@ public class Customer {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Customer(Integer id, String fullName, String mobile, String email, String type, String countTickets,
+	public Customer(String id, String fullName, String mobile, String email, String type, String countTickets,
 			LocalDate generatedDate) {
 		super();
 		this.id = id;
@@ -43,13 +49,14 @@ public class Customer {
 		this.generatedDate = generatedDate;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer getId() {
+//
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -93,7 +100,7 @@ public class Customer {
 		this.countTickets = countTickets;
 	}
 
-	@Column(name="reg_date")
+//	@Column(name = "reg_date")
 	public LocalDate getgeneratedDate() {
 		return generatedDate;
 	}

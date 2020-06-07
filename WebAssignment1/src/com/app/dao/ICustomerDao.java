@@ -12,6 +12,8 @@ public interface ICustomerDao {
 
 	List<Customer> getAllCustomers(int page_id);
 
+	public List<Object[]> getCustomerGroupedByTickets();
 
-	public List<Object[]> getCustomerGroupedBy();
+	public List<Object[]> getCustomerGroupedByDate();
+
 }
