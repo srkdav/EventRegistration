@@ -24,7 +24,7 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
+* [Screenshots](#screenshots)
 * [Contact](#contact)
 
 
@@ -79,7 +79,7 @@ git clone https://github.com/github_username/EventRegistration.git
 
 ```
 <!-- USAGE EXAMPLES -->
-## Usage
+## Screenshots
 Preview Page :
 ![image](https://user-images.githubusercontent.com/7292607/84664293-f1a0cd00-af3b-11ea-9a0b-c318fd7f9291.png)
 
