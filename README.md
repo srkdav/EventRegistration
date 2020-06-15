@@ -4,23 +4,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">YOUR_TITLE</h3>
+ 
+  <h3 align="center">Event Registration Application</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    This application enables the customers to register for a particular event. Additionally, admin has a complete login functionality to monitor and analyse the registrations.  
     <br />
-    <a href="https://github.com/github_username/repo"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo/issues">Request Feature</a>
+    <a href="https://www.youtube.com/watch?v=AcK3UBwR1XY">View Demo</a>
   </p>
 </p>
 
