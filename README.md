@@ -32,7 +32,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![image](https://user-images.githubusercontent.com/7292607/84663907-69bac300-af3b-11ea-977a-d332c842a93f.png)
 
 ### Built With
 
