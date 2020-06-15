@@ -32,7 +32,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://user-images.githubusercontent.com/7292607/84663907-69bac300-af3b-11ea-977a-d332c842a93f.png)
+![image](https://user-images.githubusercontent.com/7292607/84664399-1e54e480-af3c-11ea-911c-cfb515c91c8c.png)
 
 ### Built With
 
@@ -78,15 +78,20 @@ git clone https://github.com/github_username/EventRegistration.git
 -  change this to the path for storing images locally.
 
 ```
-
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+<br>
+Preview Page :
+![image](https://user-images.githubusercontent.com/7292607/84664293-f1a0cd00-af3b-11ea-9a0b-c318fd7f9291.png)
+</br>
+Final Page:
+![image](https://user-images.githubusercontent.com/7292607/84664724-97543c00-af3c-11ea-8ba2-7f2bfe736591.png)
+</br>
+Admin Dashboard Page:
+![image](https://user-images.githubusercontent.com/7292607/84664464-36c4ff00-af3c-11ea-8d20-6211e50e059d.png)
+</br>
+Admin Charts:
+![image](https://user-images.githubusercontent.com/7292607/84664536-4e9c8300-af3c-11ea-8444-e75f92284037.png)
 
 
 <!-- CONTACT -->
