@@ -83,13 +83,13 @@ git clone https://github.com/github_username/EventRegistration.git
 <br>
 Preview Page :
 ![image](https://user-images.githubusercontent.com/7292607/84664293-f1a0cd00-af3b-11ea-9a0b-c318fd7f9291.png)
-</br>
+
 Final Page:
 ![image](https://user-images.githubusercontent.com/7292607/84664724-97543c00-af3c-11ea-8ba2-7f2bfe736591.png)
-</br>
+
 Admin Dashboard Page:
 ![image](https://user-images.githubusercontent.com/7292607/84664464-36c4ff00-af3c-11ea-8d20-6211e50e059d.png)
-</br>
+
 Admin Charts:
 ![image](https://user-images.githubusercontent.com/7292607/84664536-4e9c8300-af3c-11ea-8444-e75f92284037.png)
 
