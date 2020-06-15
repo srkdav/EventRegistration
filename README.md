@@ -38,17 +38,12 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo`, `twitter_handle`, `email`
-
-
 ### Built With
 
-* []()
-* []()
-* []()
-
+* Spring MVC
+* Java 8
+* JavaScript
+* MySQL
 
 
 <!-- GETTING STARTED -->
@@ -58,21 +53,35 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
 ```sh
-npm install npm@latest -g
+JDK 1.7 or later
+Spring MVC Latest RELEASE 
 ```
 
 ### Installation
  
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo.git
+git clone https://github.com/github_username/EventRegistration.git
 ```
-2. Install NPM packages
+2. 
 ```sh
-npm install
+2.1)Jar files are provided under libraries folder. Add jar files in   build path and to deployement assembly. How?
+- Right click on Project, Build path, configure build path
+- Click classpath , add library, user library.
+-Create User Libraries as Spring Library and add spring jars provided under "Spring-hibernate-rest-jars" folder to this.
+-Similarly, Create Hibernate Libraries as Hibernate Library and add Hibernate jars provided under "Hibernate 5 jars" folder to this.
+-Add the remaining jars that were provided similarly.
+-Also, on Deployement assembly, add the libraries and jars the were added before.
+
+2.2)Under Java Resources, Hibernate-persistance.xml :
+- modify p:url - localhost url,port number, database name in the same format. 
+-modify username and password as per your database.
+
+2.3)Finally, modify the app.properties file :
+-  change this to the path for storing images locally.
+
 ```
 
 
@@ -93,23 +102,6 @@ See the [open issues](https://github.com/github_username/repo/issues) for a list
 
 
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
@@ -119,16 +111,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
 Project Link: [https://github.com/github_username/repo](https://github.com/github_username/repo)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
 
 
 
