@@ -92,7 +92,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- CONTACT -->
 ## Contact
 
-Karthick Sabhapathy - [@linedin_handle](www.linkedin.com/in/karthick-sabhapathy) - email
+Karthick Sabhapathy - www.linkedin.com/in/karthick-sabhapathy - email
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
