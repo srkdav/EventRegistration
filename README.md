@@ -49,19 +49,18 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* npm
 ```sh
-JDK 1.7 or later
+JDK 1.8 or later
 Spring MVC Latest RELEASE 
 ```
 
 ### Installation
  
-1. Clone the repo
+1. Clone the repo in STS/Eclipse
 ```sh
 git clone https://github.com/github_username/EventRegistration.git
 ```
-2. 
+2. Add JAR's & modify as :
 ```sh
 2.1)Jar files are provided under libraries folder. Add jar files in   build path and to deployement assembly. How?
 - Right click on Project, Build path, configure build path
